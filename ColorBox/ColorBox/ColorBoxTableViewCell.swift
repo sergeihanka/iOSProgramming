@@ -6,4 +6,18 @@
 //  Copyright © 2016 Sergei Hanka. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ColorBoxTableViewCell: UITableViewCell {
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    
+    
+    
+    func configure(color: ColorBox) {
+        titleLabel.text = color.name
+        descLabel.text = color.desc
+    }
+    
+}

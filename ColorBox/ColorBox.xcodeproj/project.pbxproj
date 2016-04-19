@@ -14,6 +14,9 @@
 		410186FB1CAAB85D00C3F7F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410186F91CAAB85D00C3F7F3 /* LaunchScreen.storyboard */; };
 		410187061CAAB85D00C3F7F3 /* ColorBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410187051CAAB85D00C3F7F3 /* ColorBoxTests.swift */; };
 		410187111CAAB85D00C3F7F3 /* ColorBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410187101CAAB85D00C3F7F3 /* ColorBoxUITests.swift */; };
+		4101871F1CAABB3A00C3F7F3 /* ColorBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101871E1CAABB3A00C3F7F3 /* ColorBoxTableViewCell.swift */; };
+		410187211CAACC3D00C3F7F3 /* ColorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410187201CAACC3D00C3F7F3 /* ColorClient.swift */; };
+		410187231CAAD1D200C3F7F3 /* ColorBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410187221CAAD1D200C3F7F3 /* ColorBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		4101870C1CAAB85D00C3F7F3 /* ColorBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		410187101CAAB85D00C3F7F3 /* ColorBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBoxUITests.swift; sourceTree = "<group>"; };
 		410187121CAAB85D00C3F7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4101871E1CAABB3A00C3F7F3 /* ColorBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBoxTableViewCell.swift; sourceTree = "<group>"; };
+		410187201CAACC3D00C3F7F3 /* ColorClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorClient.swift; sourceTree = "<group>"; };
+		410187221CAAD1D200C3F7F3 /* ColorBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,10 @@
 			children = (
 				410186F01CAAB85D00C3F7F3 /* AppDelegate.swift */,
 				410186F21CAAB85D00C3F7F3 /* ViewController.swift */,
+				410187201CAACC3D00C3F7F3 /* ColorClient.swift */,
+				410187221CAAD1D200C3F7F3 /* ColorBox.swift */,
 				410186F41CAAB85D00C3F7F3 /* Main.storyboard */,
+				4101871E1CAABB3A00C3F7F3 /* ColorBoxTableViewCell.swift */,
 				410186F71CAAB85D00C3F7F3 /* Assets.xcassets */,
 				410186F91CAAB85D00C3F7F3 /* LaunchScreen.storyboard */,
 				410186FC1CAAB85D00C3F7F3 /* Info.plist */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410187231CAAD1D200C3F7F3 /* ColorBox.swift in Sources */,
+				4101871F1CAABB3A00C3F7F3 /* ColorBoxTableViewCell.swift in Sources */,
 				410186F31CAAB85D00C3F7F3 /* ViewController.swift in Sources */,
+				410187211CAACC3D00C3F7F3 /* ColorClient.swift in Sources */,
 				410186F11CAAB85D00C3F7F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

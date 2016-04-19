@@ -8,28 +8,40 @@
 
 import UIKit
 
-class ColorBoxViewController: UIViewController {
-
+class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: UIView!
+    var colors: [ColorBox] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        ColorClient.sharedClient.getColors { [weak self](colors) in
+            self?.colors = colors
+            self?.tableView.reloadData()
+        }
     }
-
 }
 
-extension ColorBoxViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return colors.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("colorCell", forIndexPath: indexPath) as! ColorBoxTableViewCell
-        
-        
-        cell.configure()
+        let color = colors[indexPath.row]
+        cell.configure(color)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 160.0
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        headerView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height)        
+        return headerView
     }
 }
