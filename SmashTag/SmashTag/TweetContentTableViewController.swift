@@ -60,6 +60,7 @@ class TweetContentTableViewController: UITableViewController {
     private struct Storyboard {
         static let KeywordCellReuseIdentifier = "ContentView"
         static let ImageCellReuseIdentifier = "ImgView"
+        static let ClickSearchReuseIdentifier = "clickToSearch"
     }
     
     
@@ -107,5 +108,31 @@ class TweetContentTableViewController: UITableViewController {
             return self.content[section].title
         }
         return ""
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == Storyboard.ClickSearchReuseIdentifier {
+                if let mtvc = segue.destinationViewController as? TweetTableViewController {
+                    if let theTweet = sender as? UITableViewCell {
+                        mtvc.searchText = theTweet.textLabel?.text
+                    }
+                }
+            }
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == Storyboard.ClickSearchReuseIdentifier {
+            if let cell = sender as? UITableViewCell {
+                if let url = cell.textLabel?.text {
+                    if url.containsString("https://") {
+                        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+                        return false
+                    }
+                }
+            }
+        }
+        return true
     }
 }
