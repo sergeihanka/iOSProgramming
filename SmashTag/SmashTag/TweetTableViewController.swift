@@ -14,8 +14,8 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     
     var tweets = [[Tweet]]()
     
-    var searchText: String? = "#mnvikings"
-//    var searchText: String? = "#puppies"
+//    var searchText: String? = "#mnvikings"
+    var searchText: String? = "#puppies"
     {
         didSet {
             lastSuccessfulRequest = nil

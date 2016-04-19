@@ -97,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdZ-xU-89r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="238"/>
+            <point key="canvasLocation" x="-631" y="246"/>
         </scene>
         <!--Tweet Content Table View Controller-->
         <scene sceneID="sKJ-Of-sVa">
@@ -154,6 +154,7 @@
                                 <connections>
                                     <outlet property="spinnyThing" destination="Lg5-ga-WAA" id="VIh-vo-oQJ"/>
                                     <outlet property="tweetImageView" destination="QEM-GX-iqg" id="fLG-7d-Rlj"/>
+                                    <segue destination="o9l-Hx-MxX" kind="show" identifier="showImage" id="Ayq-rS-pbd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -165,7 +166,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0v-O0-inw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="1016"/>
+            <point key="canvasLocation" x="-1331" y="1026"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Dqw-lb-gm3">
+            <objects>
+                <viewController id="o9l-Hx-MxX" customClass="ImageViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D04-8g-Q3Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="rLp-mt-NaV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PlY-lU-L1V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRf-3J-PXV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XKY-Y6-cRK">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lRf-3J-PXV" secondAttribute="trailing" id="3MB-h4-c0Z"/>
+                            <constraint firstAttribute="centerX" secondItem="XKY-Y6-cRK" secondAttribute="centerX" id="Dpg-PW-gts"/>
+                            <constraint firstItem="lRf-3J-PXV" firstAttribute="leading" secondItem="PlY-lU-L1V" secondAttribute="leading" id="VuL-WP-I2a"/>
+                            <constraint firstItem="lRf-3J-PXV" firstAttribute="bottom" secondItem="rLp-mt-NaV" secondAttribute="top" id="bDu-yT-b0V"/>
+                            <constraint firstItem="lRf-3J-PXV" firstAttribute="top" secondItem="PlY-lU-L1V" secondAttribute="top" id="eq0-In-Awn"/>
+                            <constraint firstAttribute="centerY" secondItem="XKY-Y6-cRK" secondAttribute="centerY" id="sH7-5w-LLi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="lRf-3J-PXV" id="IhC-Jo-pRg"/>
+                        <outlet property="spinner" destination="XKY-Y6-cRK" id="iPL-YV-7D8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Mc-sg-ybt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-631" y="1026"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xdK-NY-9BI">

@@ -60,6 +60,7 @@ class TweetContentTableViewController: UITableViewController {
     private struct Storyboard {
         static let KeywordCellReuseIdentifier = "ContentView"
         static let ImageCellReuseIdentifier = "ImgView"
+        static let ImageViewReuseIdentifier = "showImage"
         static let ClickSearchReuseIdentifier = "clickToSearch"
     }
     
@@ -116,6 +117,14 @@ class TweetContentTableViewController: UITableViewController {
                 if let mtvc = segue.destinationViewController as? TweetTableViewController {
                     if let theTweet = sender as? UITableViewCell {
                         mtvc.searchText = theTweet.textLabel?.text
+                    }
+                }
+            }
+            if identifier == Storyboard.ImageViewReuseIdentifier {
+                if let imgvc = segue.destinationViewController as? ImageViewController {
+                    if let cell = sender as? TweetContentTableViewCell {
+                        print(cell.imageUrl)
+                        imgvc.imageURL = cell.imageUrl
                     }
                 }
             }

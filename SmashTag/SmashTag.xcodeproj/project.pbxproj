@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4134952A1CBD2C5D00131F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413495291CBD2C5D00131F5B /* Main.storyboard */; };
+		418EBCA71CC66CC400AED203 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EBCA61CC66CC400AED203 /* ImageViewController.swift */; };
 		41A5C88D1CC47AC400F9BAD1 /* TweetContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5C88C1CC47AC400F9BAD1 /* TweetContentTableViewController.swift */; };
 		41A5C88F1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5C88E1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift */; };
 		41ED17991CB3F4870007A37A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED17981CB3F4870007A37A /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		413495291CBD2C5D00131F5B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		418EBCA61CC66CC400AED203 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		41A5C88C1CC47AC400F9BAD1 /* TweetContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetContentTableViewController.swift; sourceTree = "<group>"; };
 		41A5C88E1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetContentTableViewCell.swift; sourceTree = "<group>"; };
 		41ED17951CB3F4870007A37A /* SmashTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SmashTag.app; path = "/Users/sergeihanka/Documents/Luther Year Three/iOS Programming/SmashTag/build/Debug-iphoneos/SmashTag.app"; sourceTree = "<absolute>"; };
@@ -100,6 +102,7 @@
 		41ED17971CB3F4870007A37A /* SmashTag */ = {
 			isa = PBXGroup;
 			children = (
+				418EBCA61CC66CC400AED203 /* ImageViewController.swift */,
 				41ED17C61CB3F5A30007A37A /* TweetTableViewController.swift */,
 				41ED17D11CB40DE30007A37A /* TweetTableViewCell.swift */,
 				41A5C88E1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift */,
@@ -280,6 +283,7 @@
 			files = (
 				41A5C88F1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift in Sources */,
 				41A5C88D1CC47AC400F9BAD1 /* TweetContentTableViewController.swift in Sources */,
+				418EBCA71CC66CC400AED203 /* ImageViewController.swift in Sources */,
 				41ED17991CB3F4870007A37A /* AppDelegate.swift in Sources */,
 				41ED17CF1CB3F7880007A37A /* TwitterRequest.swift in Sources */,
 				41ED17D01CB3F7880007A37A /* User.swift in Sources */,
