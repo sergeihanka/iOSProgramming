@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412A8F861CC6B27A0027A9B7 /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 412A8F851CC6B27A0027A9B7 /* Home-25.png */; };
+		412A8F881CC6B2D40027A9B7 /* Search Property-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 412A8F871CC6B2D40027A9B7 /* Search Property-25.png */; };
 		4134952A1CBD2C5D00131F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413495291CBD2C5D00131F5B /* Main.storyboard */; };
 		418EBCA71CC66CC400AED203 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EBCA61CC66CC400AED203 /* ImageViewController.swift */; };
+		418EBCAB1CC6781000AED203 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EBCAA1CC6781000AED203 /* HistoryTableViewController.swift */; };
 		41A5C88D1CC47AC400F9BAD1 /* TweetContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5C88C1CC47AC400F9BAD1 /* TweetContentTableViewController.swift */; };
 		41A5C88F1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A5C88E1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift */; };
 		41ED17991CB3F4870007A37A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED17981CB3F4870007A37A /* AppDelegate.swift */; };
@@ -42,19 +45,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		412A8F7E1CC6AB140027A9B7 /* SmashTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmashTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		412A8F7F1CC6AB140027A9B7 /* SmashTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmashTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		412A8F801CC6AB140027A9B7 /* SmashTagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmashTagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		412A8F851CC6B27A0027A9B7 /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "../../../../Documents/Luther Year Three/iOS Programming/SmashTag/SmashTag/Home-25.png"; sourceTree = "<group>"; };
+		412A8F871CC6B2D40027A9B7 /* Search Property-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Search Property-25.png"; path = "../../../../Documents/Luther Year Three/iOS Programming/SmashTag/SmashTag/Search Property-25.png"; sourceTree = "<group>"; };
 		413495291CBD2C5D00131F5B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		418EBCA61CC66CC400AED203 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		418EBCAA1CC6781000AED203 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewController.swift; path = ../HistoryTableViewController.swift; sourceTree = "<group>"; };
 		41A5C88C1CC47AC400F9BAD1 /* TweetContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetContentTableViewController.swift; sourceTree = "<group>"; };
 		41A5C88E1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetContentTableViewCell.swift; sourceTree = "<group>"; };
-		41ED17951CB3F4870007A37A /* SmashTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SmashTag.app; path = "/Users/sergeihanka/Documents/Luther Year Three/iOS Programming/SmashTag/build/Debug-iphoneos/SmashTag.app"; sourceTree = "<absolute>"; };
 		41ED17981CB3F4870007A37A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41ED179F1CB3F4870007A37A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41ED17A21CB3F4870007A37A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41ED17A41CB3F4870007A37A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41ED17A91CB3F4870007A37A /* SmashTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SmashTagTests.xctest; path = "/Users/sergeihanka/Documents/Luther Year Three/iOS Programming/SmashTag/build/Debug-iphoneos/SmashTagTests.xctest"; sourceTree = "<absolute>"; };
 		41ED17AD1CB3F4870007A37A /* SmashTagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmashTagTests.swift; sourceTree = "<group>"; };
 		41ED17AF1CB3F4870007A37A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41ED17B41CB3F4870007A37A /* SmashTagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SmashTagUITests.xctest; path = "/Users/sergeihanka/Documents/Luther Year Three/iOS Programming/SmashTag/build/Debug-iphoneos/SmashTagUITests.xctest"; sourceTree = "<absolute>"; };
 		41ED17B81CB3F4870007A37A /* SmashTagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmashTagUITests.swift; sourceTree = "<group>"; };
 		41ED17BA1CB3F4870007A37A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41ED17C61CB3F5A30007A37A /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 				41ED17971CB3F4870007A37A /* SmashTag */,
 				41ED17AC1CB3F4870007A37A /* SmashTagTests */,
 				41ED17B71CB3F4870007A37A /* SmashTagUITests */,
+				412A8F7E1CC6AB140027A9B7 /* SmashTag.app */,
+				412A8F7F1CC6AB140027A9B7 /* SmashTagTests.xctest */,
+				412A8F801CC6AB140027A9B7 /* SmashTagUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +116,7 @@
 				41ED17D11CB40DE30007A37A /* TweetTableViewCell.swift */,
 				41A5C88E1CC47B0300F9BAD1 /* TweetContentTableViewCell.swift */,
 				41A5C88C1CC47AC400F9BAD1 /* TweetContentTableViewController.swift */,
+				418EBCAA1CC6781000AED203 /* HistoryTableViewController.swift */,
 				413495291CBD2C5D00131F5B /* Main.storyboard */,
 				41ED17CC1CB3F7880007A37A /* Twitter */,
 				41ED179F1CB3F4870007A37A /* Assets.xcassets */,
@@ -138,6 +148,8 @@
 		41ED17CC1CB3F7880007A37A /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				412A8F851CC6B27A0027A9B7 /* Home-25.png */,
+				412A8F871CC6B2D40027A9B7 /* Search Property-25.png */,
 				41ED17C81CB3F7880007A37A /* MediaItem.swift */,
 				41ED17C91CB3F7880007A37A /* Tweet.swift */,
 				41ED17CA1CB3F7880007A37A /* TwitterRequest.swift */,
@@ -164,7 +176,7 @@
 			);
 			name = SmashTag;
 			productName = SmashTag;
-			productReference = 41ED17951CB3F4870007A37A /* SmashTag.app */;
+			productReference = 412A8F7E1CC6AB140027A9B7 /* SmashTag.app */;
 			productType = "com.apple.product-type.application";
 		};
 		41ED17A81CB3F4870007A37A /* SmashTagTests */ = {
@@ -182,7 +194,7 @@
 			);
 			name = SmashTagTests;
 			productName = SmashTagTests;
-			productReference = 41ED17A91CB3F4870007A37A /* SmashTagTests.xctest */;
+			productReference = 412A8F7F1CC6AB140027A9B7 /* SmashTagTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		41ED17B31CB3F4870007A37A /* SmashTagUITests */ = {
@@ -200,7 +212,7 @@
 			);
 			name = SmashTagUITests;
 			productName = SmashTagUITests;
-			productReference = 41ED17B41CB3F4870007A37A /* SmashTagUITests.xctest */;
+			productReference = 412A8F801CC6AB140027A9B7 /* SmashTagUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +266,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				412A8F861CC6B27A0027A9B7 /* Home-25.png in Resources */,
 				4134952A1CBD2C5D00131F5B /* Main.storyboard in Resources */,
+				412A8F881CC6B2D40027A9B7 /* Search Property-25.png in Resources */,
 				41ED17A31CB3F4870007A37A /* LaunchScreen.storyboard in Resources */,
 				41ED17A01CB3F4870007A37A /* Assets.xcassets in Resources */,
 			);
@@ -289,6 +303,7 @@
 				41ED17D01CB3F7880007A37A /* User.swift in Sources */,
 				41ED17C71CB3F5A30007A37A /* TweetTableViewController.swift in Sources */,
 				41ED17CD1CB3F7880007A37A /* MediaItem.swift in Sources */,
+				418EBCAB1CC6781000AED203 /* HistoryTableViewController.swift in Sources */,
 				41ED17CE1CB3F7880007A37A /* Tweet.swift in Sources */,
 				41ED17D21CB40DE30007A37A /* TweetTableViewCell.swift in Sources */,
 			);

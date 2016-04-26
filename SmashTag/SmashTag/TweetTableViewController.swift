@@ -56,19 +56,22 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     @IBAction private func refresh(sender: UIRefreshControl?) {
-        if let request = nextRequestToAttempt {
-            request.fetchTweets { (newTweets) -> Void in
-                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                    if newTweets.count > 0 {
-                        self.lastSuccessfulRequest = request // oops, forgot this line in lecture
-                        self.tweets.insert(newTweets, atIndex: 0)
-                        self.tableView.reloadData()
+        if searchText != nil {
+            History().add(searchText!)
+            if let request = nextRequestToAttempt {
+                request.fetchTweets { (newTweets) -> Void in
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        if newTweets.count > 0 {
+                            self.lastSuccessfulRequest = request // oops, forgot this line in lecture
+                            self.tweets.insert(newTweets, atIndex: 0)
+                            self.tableView.reloadData()
+                        }
+                        sender?.endRefreshing()
                     }
-                    sender?.endRefreshing()
                 }
+            } else {
+                sender?.endRefreshing()
             }
-        } else {
-            sender?.endRefreshing()
         }
     }
     
@@ -180,6 +183,15 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
                 }
             }
         }
+    }
+    
+    override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {
+        if let first = navigationController?.viewControllers.first as? TweetTableViewController {
+            if first == self {
+                return true
+            }
+        }
+        return false
     }
 
 }
