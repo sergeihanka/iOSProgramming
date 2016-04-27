@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411FB9D41CD090AB0049B157 /* newCategoryFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FB9D31CD090AB0049B157 /* newCategoryFormController.swift */; };
+		411FB9D61CD0A1040049B157 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FB9D51CD0A1040049B157 /* GraphViewController.swift */; };
+		4142462E1CCF113A005AB881 /* TimeLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142462D1CCF113A005AB881 /* TimeLogTableViewController.swift */; };
+		414246301CCF12C2005AB881 /* TimeLogTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142462F1CCF12C2005AB881 /* TimeLogTableViewCellController.swift */; };
+		414246361CCFD57C005AB881 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414246351CCFD57C005AB881 /* ActivityLog.swift */; };
 		419988651CBC105400ED6789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988641CBC105400ED6789 /* AppDelegate.swift */; };
-		419988671CBC105400ED6789 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988661CBC105400ED6789 /* ViewController.swift */; };
 		4199886A1CBC105400ED6789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419988681CBC105400ED6789 /* Main.storyboard */; };
 		4199886C1CBC105400ED6789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4199886B1CBC105400ED6789 /* Assets.xcassets */; };
 		4199886F1CBC105400ED6789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4199886D1CBC105400ED6789 /* LaunchScreen.storyboard */; };
 		4199887A1CBC105400ED6789 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988791CBC105400ED6789 /* FinalProjectTests.swift */; };
 		419988851CBC105400ED6789 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988841CBC105400ED6789 /* FinalProjectUITests.swift */; };
-		419988931CBC279900ED6789 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988921CBC279900ED6789 /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411FB9D31CD090AB0049B157 /* newCategoryFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newCategoryFormController.swift; sourceTree = "<group>"; };
+		411FB9D51CD0A1040049B157 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		4142462D1CCF113A005AB881 /* TimeLogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogTableViewController.swift; sourceTree = "<group>"; };
+		4142462F1CCF12C2005AB881 /* TimeLogTableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogTableViewCellController.swift; sourceTree = "<group>"; };
+		414246351CCFD57C005AB881 /* ActivityLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
 		419988611CBC105400ED6789 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419988641CBC105400ED6789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		419988661CBC105400ED6789 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		419988691CBC105400ED6789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4199886B1CBC105400ED6789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4199886E1CBC105400ED6789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +55,6 @@
 		419988801CBC105400ED6789 /* FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		419988841CBC105400ED6789 /* FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectUITests.swift; sourceTree = "<group>"; };
 		419988861CBC105400ED6789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		419988921CBC279900ED6789 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,16 @@
 		419988631CBC105400ED6789 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
-				419988641CBC105400ED6789 /* AppDelegate.swift */,
-				419988661CBC105400ED6789 /* ViewController.swift */,
+				4142462D1CCF113A005AB881 /* TimeLogTableViewController.swift */,
+				414246351CCFD57C005AB881 /* ActivityLog.swift */,
+				411FB9D51CD0A1040049B157 /* GraphViewController.swift */,
+				4142462F1CCF12C2005AB881 /* TimeLogTableViewCellController.swift */,
+				411FB9D31CD090AB0049B157 /* newCategoryFormController.swift */,
 				419988681CBC105400ED6789 /* Main.storyboard */,
-				419988921CBC279900ED6789 /* ContentViewController.swift */,
 				4199886B1CBC105400ED6789 /* Assets.xcassets */,
 				4199886D1CBC105400ED6789 /* LaunchScreen.storyboard */,
 				419988701CBC105400ED6789 /* Info.plist */,
+				419988641CBC105400ED6789 /* AppDelegate.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -262,9 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				419988671CBC105400ED6789 /* ViewController.swift in Sources */,
-				419988931CBC279900ED6789 /* ContentViewController.swift in Sources */,
+				411FB9D41CD090AB0049B157 /* newCategoryFormController.swift in Sources */,
+				414246301CCF12C2005AB881 /* TimeLogTableViewCellController.swift in Sources */,
 				419988651CBC105400ED6789 /* AppDelegate.swift in Sources */,
+				411FB9D61CD0A1040049B157 /* GraphViewController.swift in Sources */,
+				4142462E1CCF113A005AB881 /* TimeLogTableViewController.swift in Sources */,
+				414246361CCFD57C005AB881 /* ActivityLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +503,7 @@
 				4199888B1CBC105400ED6789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4199888C1CBC105400ED6789 /* Build configuration list for PBXNativeTarget "FinalProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +512,7 @@
 				4199888E1CBC105400ED6789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4199888F1CBC105400ED6789 /* Build configuration list for PBXNativeTarget "FinalProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +521,7 @@
 				419988911CBC105400ED6789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
