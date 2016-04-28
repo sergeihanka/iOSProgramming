@@ -67,10 +67,13 @@ class ActivityLog {
     //        static let ratingKey = "rating"
     //    }
     
+    func saveToActivityObject() {
+        
+    }
+    
     struct ActivityObject {
         static let categoryName = String()
         static let DailyHoursSpent = [(String,Double)]()
         static let totalHoursSpent = Double()
-        
     }
 }

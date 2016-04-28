@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HCC-GQ-aQz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -120,52 +118,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="870-Me-1SV">
-                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jI4-KH-dOi">
-                                    <rect key="frame" x="186" y="4" width="100" height="42"/>
-                                    <color key="backgroundColor" red="0.17074015672782875" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="YZu-aG-w8I"/>
-                                    </constraints>
-                                    <state key="normal" title="Submit">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="SubmitButton" destination="kSK-5P-fvc" eventType="touchUpInside" id="7CY-MG-S17"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0h-2a-2Rf">
-                                    <rect key="frame" x="294" y="4" width="120" height="42"/>
-                                    <color key="backgroundColor" red="0.1711423715" green="0.25932279860000002" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="120" id="cLA-ug-gkQ"/>
-                                    </constraints>
-                                    <state key="normal" title="Add Category">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <segue destination="JOP-it-dhQ" kind="popoverPresentation" popoverAnchorView="w0h-2a-2Rf" id="ajj-ib-44W">
-                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                        </segue>
-                                    </connections>
-                                </button>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHs-le-Psg">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <items>
+                                        <barButtonItem systemItem="add" id="n4z-bZ-BUX">
+                                            <connections>
+                                                <segue destination="JOP-it-dhQ" kind="popoverPresentation" popoverAnchorBarButtonItem="n4z-bZ-BUX" id="kTK-jM-YDp">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="NGB-og-zhQ"/>
+                                        <barButtonItem title="Wednesday" id="150-u1-cco">
+                                            <color key="tintColor" red="0.015686274509803921" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Pyn-iL-lpW"/>
+                                        <barButtonItem systemItem="save" id="fPu-wp-FT2">
+                                            <connections>
+                                                <action selector="SubmitButton" destination="kSK-5P-fvc" id="CBf-7J-Sjf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="jI4-KH-dOi" firstAttribute="top" secondItem="870-Me-1SV" secondAttribute="top" constant="4" id="EMv-Rv-zPG"/>
-                                <constraint firstItem="jI4-KH-dOi" firstAttribute="baseline" secondItem="w0h-2a-2Rf" secondAttribute="firstBaseline" id="Ioy-Kt-63o"/>
-                                <constraint firstItem="w0h-2a-2Rf" firstAttribute="leading" secondItem="jI4-KH-dOi" secondAttribute="trailing" constant="8" symbolic="YES" id="Yy0-C5-ZFT"/>
-                                <constraint firstItem="w0h-2a-2Rf" firstAttribute="centerX" secondItem="870-Me-1SV" secondAttribute="centerX" constant="54" id="fke-x4-21O"/>
-                                <constraint firstItem="jI4-KH-dOi" firstAttribute="top" secondItem="w0h-2a-2Rf" secondAttribute="top" id="kFe-Gz-LsM"/>
-                                <constraint firstItem="w0h-2a-2Rf" firstAttribute="baseline" secondItem="jI4-KH-dOi" secondAttribute="firstBaseline" id="leh-JH-zwt"/>
-                                <constraint firstItem="jI4-KH-dOi" firstAttribute="centerY" secondItem="870-Me-1SV" secondAttribute="centerY" id="zEV-j3-sbB"/>
+                                <constraint firstAttribute="trailing" secondItem="QHs-le-Psg" secondAttribute="trailing" id="4g2-h4-bUP"/>
+                                <constraint firstAttribute="bottom" secondItem="QHs-le-Psg" secondAttribute="bottom" id="fbR-5L-gvi"/>
+                                <constraint firstItem="QHs-le-Psg" firstAttribute="top" secondItem="870-Me-1SV" secondAttribute="top" id="vvG-BU-NlN"/>
+                                <constraint firstItem="QHs-le-Psg" firstAttribute="leading" secondItem="870-Me-1SV" secondAttribute="leading" id="xan-KF-ce6"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categories" id="jYY-Nd-0w0" customClass="TimeLogTableViewCellController" customModule="FinalProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="142" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYY-Nd-0w0" id="tJV-wU-j7f">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -219,9 +208,6 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <connections>
-                        <outlet property="getCategoryPopup" destination="w0h-2a-2Rf" id="oee-h2-o83"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVw-Jo-uVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3T-Ae-WmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="963"/>
+            <point key="canvasLocation" x="1776" y="968"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UcO-hj-DWS">
@@ -421,8 +407,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BarChartLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zy-GX-Jxx">
-                                <rect key="frame" x="265" y="475" width="111" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarChartLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zy-GX-Jxx">
+                                <rect key="frame" x="245" y="540" width="111" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="l4j-iy-0go"/>
                                 </constraints>

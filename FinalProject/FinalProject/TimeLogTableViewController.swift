@@ -20,7 +20,6 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
         for key in AL.tempStack.keys {
             AL.updateActivityLog(key, newHours: AL.tempStack[key]!)
         }
-
         AL.getAverageBreakDown()
         print("STACK",AL.activityStack,"TOTAL HOURS",AL.totalTime)
     }
