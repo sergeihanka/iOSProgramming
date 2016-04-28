@@ -6,3 +6,57 @@
 //  Copyright © 2016 Sergei Hanka. All rights reserved.
 //
 
+import UIKit
+import PNChartSwift
+
+class GraphViewController: UIViewController {
+    
+    @IBOutlet weak var barChart: PNBarChart!
+    
+    
+    @IBOutlet weak var ChartLabel: UILabel!
+    
+    var AL = ActivityLog.sharedLog
+    
+    override func viewDidLoad() {
+        self.title = "Productivity, Bitch!"
+        createBarChart()
+    }
+    
+    func createBarChart() {
+        ChartLabel.textColor = PNGreenColor
+        
+        ChartLabel.font = UIFont(name: "Avenir-Medium", size:23.0)
+        
+        ChartLabel.text = "Productivity Overview"
+        
+        barChart.backgroundColor = UIColor.clearColor()
+        
+        barChart.barBackgroundColor = UIColor.clearColor()
+        
+        barChart.animationType = .Waterfall
+        
+        barChart.xLabels = Array(AL.activityStack.keys)
+        barChart.yValues = Array(AL.activityStack.values)
+        barChart.strokeChart()
+    }
+    
+    func userClickedOnBarChartIndex(barIndex: Int) {
+        print("Click  on bar \(barIndex)")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+}
+
+
+
+
+
+
+
+
+//end

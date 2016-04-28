@@ -13,9 +13,9 @@ class ActivityLog {
     static let sharedLog = ActivityLog()
     
     init() {
-        updateActivityLog("School", newHours: 00000)
-        updateActivityLog("Work", newHours: 00000)
-        updateActivityLog("Play", newHours: 00000)
+        updateActivityLog("School", newHours: 00020)
+        updateActivityLog("Work", newHours: 00030)
+        updateActivityLog("Play", newHours: 00040)
     }
     
     var count: Int { return categories.count }
@@ -58,5 +58,19 @@ class ActivityLog {
         print(stats)
         return stats
     }
+ 
+    // MARK: Persistent Data
     
+    //    struct PropertyKey {
+    //        static let nameKey = "name"
+    //        static let photoKey = "photo"
+    //        static let ratingKey = "rating"
+    //    }
+    
+    struct ActivityObject {
+        static let categoryName = String()
+        static let DailyHoursSpent = [(String,Double)]()
+        static let totalHoursSpent = Double()
+        
+    }
 }
