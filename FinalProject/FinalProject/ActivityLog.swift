@@ -13,6 +13,7 @@ class ActivityLog {
     static let sharedLog = ActivityLog()
     
     init() {
+//        populateActivityLog()
         updateActivityLog("School", newHours: 00020)
         updateActivityLog("Work", newHours: 00030)
         updateActivityLog("Play", newHours: 00040)

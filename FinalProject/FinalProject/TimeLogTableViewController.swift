@@ -12,6 +12,8 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
 //
     var AL = ActivityLog.sharedLog
     
+    @IBOutlet weak var daylabel: UIBarButtonItem!
+    
     static var sharedTable = TimeLogTableViewController()
     
     //MARK: Storyboard Buttons
@@ -24,7 +26,7 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
         print("STACK",AL.activityStack,"TOTAL HOURS",AL.totalTime)
     }
     
-    @IBOutlet weak var getCategoryPopup: UIButton!
+//    @IBOutlet weak var getCategoryPopup: UIButton!
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AL.count
@@ -37,6 +39,10 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     //MARK: Table Population
 
     override func viewDidLoad() {
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "EEEE"
+        daylabel.title! = formatter.stringFromDate(NSDate())
+        
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
     }
