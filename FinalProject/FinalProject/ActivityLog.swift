@@ -11,28 +11,28 @@ import Foundation
 class ActivityLog {
     
     static let sharedLog = ActivityLog()
+    var activityStack = [String:Activity]()
+    var tempStack = [String:Activity]()
     
     init() {
-//        populateActivityLog()
-        updateActivityLog("School", newHours: 00020)
-        updateActivityLog("Work", newHours: 00030)
-        updateActivityLog("Play", newHours: 00040)
+        //load Saved Data
+        
+        activityStack = loadSavedData()!
+        
     }
     
     var count: Int { return categories.count }
     
-    var totalTime: Double {
+    var allActivitiesTotalTime: Double {
         get {
             var x = 0.0
             for n in activityStack.values {
-                x = x + Double(n)
+                print("VALUE: ", n.totalTime)
+                x = x + Double(n.totalTime)
             }
             return x
         }
     }
-    
-    var activityStack = [String:Int]()
-    var tempStack = [String:Int]()
     
     var categories: [String] {
         get {
@@ -44,37 +44,80 @@ class ActivityLog {
         }
     }
     
-    func updateActivityLog(category: String, newHours: Int) {
-        activityStack[category] = newHours
+    func updateActivityLog(category: String, newHours: Double, clear: Bool) {
+        var foundInStack = false
+        if clear {
+            activityStack[category]?.dailyTime = 0
+            activityStack[category]?.totalTime = 0
+        }
+        for key in activityStack.keys {
+            if category == key {
+                activityStack[category]?.dailyTime = newHours
+                activityStack[category]?.totalTime = (activityStack[category]?.totalTime)! + newHours
+                foundInStack = true
+            }
+        }
+        if !foundInStack {
+            activityStack[category] = Activity(categoryName: category, dailyTime: newHours, totalTime: newHours)
+        }
+    }
+    
+    func updateTempStack(category: String, newHours: Double, clear: Bool) {
+        var foundInStack = false
+        for key in tempStack.keys {
+            if category == key {
+                tempStack[category]?.dailyTime = newHours
+                tempStack[category]?.totalTime = (tempStack[category]?.totalTime)! + newHours
+                foundInStack = true
+            }
+        }
+        if !foundInStack {
+            tempStack[category] = Activity(categoryName: category, dailyTime: newHours, totalTime: newHours)
+        }
     }
     
     func getAverageBreakDown() -> [String:Double]{
         var stats = [String:Double]()
-        for key in activityStack.keys {
-            if totalTime > 0.0 {
-                print(Double(activityStack[key]!) / totalTime)
-                stats[key] = (Double(activityStack[key]!) / totalTime)
+        let tTime = allActivitiesTotalTime
+        for key in categories {
+            if tTime > 0.0 {
+                print(Double((activityStack[key]?.totalTime)!) / tTime)
+                stats[key] = (Double((activityStack[key]?.totalTime)!) / tTime)
+            } else {
+                stats[key] = 0.1
             }
         }
-        print(stats)
+        
+        print(tTime)
+        print("STATS: ",stats)
+        print("CATEGORIES: ",categories)
         return stats
     }
  
     // MARK: Persistent Data
     
-    //    struct PropertyKey {
-    //        static let nameKey = "name"
-    //        static let photoKey = "photo"
-    //        static let ratingKey = "rating"
-    //    }
-    
-    func saveToActivityObject() {
+    func saveActivityLog() {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(activityStack as NSDictionary)
+        
+        defaults.setObject(archivedObject, forKey: "activityList")
+        
+        defaults.synchronize()
         
     }
     
-    struct ActivityObject {
-        static let categoryName = String()
-        static let DailyHoursSpent = [(String,Double)]()
-        static let totalHoursSpent = Double()
+    func loadSavedData() -> [String:Activity]? {
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("activityList") as? NSData {
+            return (NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as! [String:Activity]?)
+        } else {
+            return [String:Activity]()
+        }
+    }
+    func CLEARALL() {
+        for key in activityStack.keys {
+            updateActivityLog(key, newHours: 0, clear: true)
+        }
     }
 }

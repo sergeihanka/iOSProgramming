@@ -21,7 +21,8 @@ class newCategoryFormController: UIViewController {
 
     @IBAction func AddCategoryButton() {
         if popOverNewCategoryLabel.text! != "" && popOverNewCategoryLabel.text != nil {
-            AL.activityStack[popOverNewCategoryLabel.text!] = 00
+            let newActivity = Activity(categoryName: popOverNewCategoryLabel.text!, dailyTime: 0, totalTime: 0)
+            AL.activityStack[popOverNewCategoryLabel.text!] = newActivity!
             
             //Refresh the table
             NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)

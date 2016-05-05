@@ -19,11 +19,19 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     //MARK: Storyboard Buttons
     
     @IBAction func SubmitButton() {
-        for key in AL.tempStack.keys {
-            AL.updateActivityLog(key, newHours: AL.tempStack[key]!)
+        print(AL.tempStack)
+        for key in AL.activityStack.keys {
+            if AL.tempStack[key]?.dailyTime != nil {
+                AL.updateActivityLog(key, newHours: (AL.tempStack[key]?.dailyTime)!, clear: false)
+            } else {
+                AL.updateActivityLog(key, newHours: 0, clear: false)
+            }
+            
+            print("STACK",AL.activityStack[key]!.dailyTime,"TOTAL HOURS",(AL.tempStack[key]?.dailyTime))
         }
+        
         AL.getAverageBreakDown()
-        print("STACK",AL.activityStack,"TOTAL HOURS",AL.totalTime)
+        AL.saveActivityLog()
     }
     
 //    @IBOutlet weak var getCategoryPopup: UIButton!
@@ -39,10 +47,12 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     //MARK: Table Population
 
     override func viewDidLoad() {
+        //Load date into header
         let formatter: NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "EEEE"
         daylabel.title! = formatter.stringFromDate(NSDate())
         
+        self.title = "Time Log"
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
     }
@@ -55,10 +65,9 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CategoryReuseIdentifier, forIndexPath: indexPath) as! TimeLogTableViewCellController
         cell.TitleLabel.text! = AL.categories[indexPath.row]
-        cell.HoursLabel.text! = AL.activityStack[cell.TitleLabel.text!]!.description
+        cell.HoursLabel.text! = String(AL.activityStack[cell.TitleLabel.text!]!.dailyTime)
         return cell
     }
-
 }
 
 

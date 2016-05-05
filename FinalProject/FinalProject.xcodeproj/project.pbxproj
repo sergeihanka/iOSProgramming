@@ -9,18 +9,44 @@
 /* Begin PBXBuildFile section */
 		411FB9D41CD090AB0049B157 /* newCategoryFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FB9D31CD090AB0049B157 /* newCategoryFormController.swift */; };
 		411FB9D61CD0A1040049B157 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FB9D51CD0A1040049B157 /* GraphViewController.swift */; };
+		4141226D1CD1344800A58800 /* PNChartSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4141226C1CD1343900A58800 /* PNChartSwift.framework */; };
+		4141226E1CD1344800A58800 /* PNChartSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4141226C1CD1343900A58800 /* PNChartSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4142462E1CCF113A005AB881 /* TimeLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142462D1CCF113A005AB881 /* TimeLogTableViewController.swift */; };
 		414246301CCF12C2005AB881 /* TimeLogTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142462F1CCF12C2005AB881 /* TimeLogTableViewCellController.swift */; };
 		414246361CCFD57C005AB881 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414246351CCFD57C005AB881 /* ActivityLog.swift */; };
+		414349351CD8ED30000FF9DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414349341CD8ED30000FF9DF /* SettingsViewController.swift */; };
 		419988651CBC105400ED6789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988641CBC105400ED6789 /* AppDelegate.swift */; };
 		4199886A1CBC105400ED6789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 419988681CBC105400ED6789 /* Main.storyboard */; };
 		4199886C1CBC105400ED6789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4199886B1CBC105400ED6789 /* Assets.xcassets */; };
 		4199886F1CBC105400ED6789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4199886D1CBC105400ED6789 /* LaunchScreen.storyboard */; };
 		4199887A1CBC105400ED6789 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988791CBC105400ED6789 /* FinalProjectTests.swift */; };
 		419988851CBC105400ED6789 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419988841CBC105400ED6789 /* FinalProjectUITests.swift */; };
+		41D494B21CDB059600E42BC6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D494B11CDB059600E42BC6 /* CalendarViewController.swift */; };
+		41DC3F101CD24A6B00863923 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DC3F0F1CD24A6B00863923 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		414122691CD1343900A58800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 414122641CD1343900A58800 /* PNChartSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0AADA0D0193E5A320063B15C;
+			remoteInfo = PNChartSwiftTests;
+		};
+		4141226B1CD1343900A58800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 414122641CD1343900A58800 /* PNChartSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 12E6A9CB1A0778B900B087DB;
+			remoteInfo = PNChartSwift;
+		};
+		4141226F1CD1344800A58800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 414122641CD1343900A58800 /* PNChartSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 12E6A9CA1A0778B900B087DB;
+			remoteInfo = PNChartSwift;
+		};
 		419988761CBC105400ED6789 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 419988591CBC105400ED6789 /* Project object */;
@@ -37,12 +63,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		41F73D6A1CD122BF00A6668A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4141226E1CD1344800A58800 /* PNChartSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		411FB9D31CD090AB0049B157 /* newCategoryFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newCategoryFormController.swift; sourceTree = "<group>"; };
 		411FB9D51CD0A1040049B157 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		414122641CD1343900A58800 /* PNChartSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PNChartSwift.xcodeproj; path = "../../../../Downloads/PNChart-Swift-master/PNChartSwift.xcodeproj"; sourceTree = "<group>"; };
 		4142462D1CCF113A005AB881 /* TimeLogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogTableViewController.swift; sourceTree = "<group>"; };
 		4142462F1CCF12C2005AB881 /* TimeLogTableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogTableViewCellController.swift; sourceTree = "<group>"; };
 		414246351CCFD57C005AB881 /* ActivityLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
+		414349341CD8ED30000FF9DF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 		419988611CBC105400ED6789 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		419988641CBC105400ED6789 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		419988691CBC105400ED6789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +97,8 @@
 		419988801CBC105400ED6789 /* FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		419988841CBC105400ED6789 /* FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectUITests.swift; sourceTree = "<group>"; };
 		419988861CBC105400ED6789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41D494B11CDB059600E42BC6 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		41DC3F0F1CD24A6B00863923 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4141226D1CD1344800A58800 /* PNChartSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +127,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414122651CD1343900A58800 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4141226A1CD1343900A58800 /* PNChartSwiftTests.xctest */,
+				4141226C1CD1343900A58800 /* PNChartSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		419988581CBC105400ED6789 = {
 			isa = PBXGroup;
 			children = (
+				414122641CD1343900A58800 /* PNChartSwift.xcodeproj */,
 				419988631CBC105400ED6789 /* FinalProject */,
 				419988781CBC105400ED6789 /* FinalProjectTests */,
 				419988831CBC105400ED6789 /* FinalProjectUITests */,
@@ -105,8 +160,11 @@
 		419988631CBC105400ED6789 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				41D494B11CDB059600E42BC6 /* CalendarViewController.swift */,
+				414349341CD8ED30000FF9DF /* SettingsViewController.swift */,
 				4142462D1CCF113A005AB881 /* TimeLogTableViewController.swift */,
 				414246351CCFD57C005AB881 /* ActivityLog.swift */,
+				41DC3F0F1CD24A6B00863923 /* Activity.swift */,
 				411FB9D51CD0A1040049B157 /* GraphViewController.swift */,
 				4142462F1CCF12C2005AB881 /* TimeLogTableViewCellController.swift */,
 				411FB9D31CD090AB0049B157 /* newCategoryFormController.swift */,
@@ -147,10 +205,12 @@
 				4199885D1CBC105400ED6789 /* Sources */,
 				4199885E1CBC105400ED6789 /* Frameworks */,
 				4199885F1CBC105400ED6789 /* Resources */,
+				41F73D6A1CD122BF00A6668A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				414122701CD1344800A58800 /* PBXTargetDependency */,
 			);
 			name = FinalProject;
 			productName = FinalProject;
@@ -230,6 +290,12 @@
 			mainGroup = 419988581CBC105400ED6789;
 			productRefGroup = 419988621CBC105400ED6789 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 414122651CD1343900A58800 /* Products */;
+					ProjectRef = 414122641CD1343900A58800 /* PNChartSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				419988601CBC105400ED6789 /* FinalProject */,
@@ -238,6 +304,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4141226A1CD1343900A58800 /* PNChartSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PNChartSwiftTests.xctest;
+			remoteRef = 414122691CD1343900A58800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4141226C1CD1343900A58800 /* PNChartSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PNChartSwift.framework;
+			remoteRef = 4141226B1CD1343900A58800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4199885F1CBC105400ED6789 /* Resources */ = {
@@ -273,10 +356,13 @@
 			files = (
 				411FB9D41CD090AB0049B157 /* newCategoryFormController.swift in Sources */,
 				414246301CCF12C2005AB881 /* TimeLogTableViewCellController.swift in Sources */,
+				41DC3F101CD24A6B00863923 /* Activity.swift in Sources */,
 				419988651CBC105400ED6789 /* AppDelegate.swift in Sources */,
 				411FB9D61CD0A1040049B157 /* GraphViewController.swift in Sources */,
 				4142462E1CCF113A005AB881 /* TimeLogTableViewController.swift in Sources */,
+				41D494B21CDB059600E42BC6 /* CalendarViewController.swift in Sources */,
 				414246361CCFD57C005AB881 /* ActivityLog.swift in Sources */,
+				414349351CD8ED30000FF9DF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +385,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		414122701CD1344800A58800 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PNChartSwift;
+			targetProxy = 4141226F1CD1344800A58800 /* PBXContainerItemProxy */;
+		};
 		419988771CBC105400ED6789 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 419988601CBC105400ED6789 /* FinalProject */;
@@ -418,10 +509,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)$(SYSTEM_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hankse01.luther.edu.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -429,6 +528,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)$(SYSTEM_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hankse01.luther.edu.FinalProject;

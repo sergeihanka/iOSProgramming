@@ -19,8 +19,9 @@ class GraphViewController: UIViewController {
     var AL = ActivityLog.sharedLog
     
     override func viewDidLoad() {
-        self.title = "Productivity, Bitch!"
+        self.title = "Productivity!"
         createBarChart()
+        
     }
     
     func createBarChart() {
@@ -36,8 +37,12 @@ class GraphViewController: UIViewController {
         
         barChart.animationType = .Waterfall
         
-        barChart.xLabels = Array(AL.activityStack.keys)
-        barChart.yValues = Array(AL.activityStack.values)
+        barChart.xLabels = AL.categories
+        
+        barChart.yValues = Array(AL.getAverageBreakDown().values)
+        
+        print(barChart.yValues)
+        
         barChart.strokeChart()
     }
     

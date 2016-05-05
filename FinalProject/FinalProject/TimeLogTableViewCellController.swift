@@ -14,18 +14,19 @@ class TimeLogTableViewCellController: UITableViewCell {
     var AL = ActivityLog.sharedLog
     
     @IBAction func plusButton(sender: UIButton) {
-        var hoursVal = Int(HoursLabel.text!)!
+        var hoursVal = Double(HoursLabel.text!)!
         hoursVal = hoursVal + 1
         HoursLabel.text! = hoursVal.description
-        AL.tempStack[TitleLabel.text!] = hoursVal
+        AL.updateTempStack(TitleLabel.text!, newHours: Double(hoursVal), clear: false)
         
     }
     @IBAction func minusButton(sender: UIButton) {
-        var hoursVal = Int(HoursLabel.text!)!
+        print(HoursLabel.text!)
+        var hoursVal = Double(HoursLabel.text!)!
         if hoursVal > 0 {
             hoursVal = hoursVal - 1
             HoursLabel.text! = hoursVal.description
-            AL.tempStack[TitleLabel.text!] = hoursVal
+            AL.updateTempStack(TitleLabel.text!, newHours: Double(hoursVal), clear: false)
         }
     }
     
