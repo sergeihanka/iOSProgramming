@@ -24,11 +24,6 @@ class dayPickerController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-//    
-//    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        let attributedString = NSAttributedString(string: "some string", attributes: [NSForegroundColorAttributeName : UIColor.orangeColor()])
-//        return attributedString
-//    }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         AL.selectedDate = AL.getPastData[row]
