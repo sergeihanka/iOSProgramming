@@ -37,9 +37,9 @@ class GraphViewController: UIViewController {
         
         barChart.animationType = .Waterfall
         
-        barChart.xLabels = AL.categories
+        barChart.xLabels = Array(AL.allActivitiesCategoriesAndTotalTime.keys)
         
-        barChart.yValues = Array(AL.getAverageBreakDown().values)
+        barChart.yValues = Array(AL.allActivitiesCategoriesAndTotalTime.values)
         
         print(barChart.yValues)
         

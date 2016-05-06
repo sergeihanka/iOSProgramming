@@ -14,30 +14,14 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var daylabel: UIBarButtonItem!
     
-    static var sharedTable = TimeLogTableViewController()
-    
     //MARK: Storyboard Buttons
     
     @IBAction func SubmitButton() {
-        print(AL.tempStack)
-        for key in AL.activityStack.keys {
-            if AL.tempStack[key]?.dailyTime != nil {
-                AL.updateActivityLog(key, newHours: (AL.tempStack[key]?.dailyTime)!, clear: false)
-            } else {
-                AL.updateActivityLog(key, newHours: 0, clear: false)
-            }
-            
-            print("STACK",AL.activityStack[key]!.dailyTime,"TOTAL HOURS",(AL.tempStack[key]?.dailyTime))
-        }
-        
-        AL.getAverageBreakDown()
         AL.saveActivityLog()
     }
     
-//    @IBOutlet weak var getCategoryPopup: UIButton!
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AL.count
+        return AL.itemCount(daylabel.title!)
     }
     
     private struct Storyboard {
@@ -49,8 +33,8 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         //Load date into header
         let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "EEEE"
-        daylabel.title! = formatter.stringFromDate(NSDate())
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        daylabel.title! = AL.selectedDate
         
         self.title = "Time Log"
         super.viewDidLoad()
@@ -59,41 +43,23 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     
     func loadList(notification: NSNotification){
         //load data here
+        daylabel.title! = AL.selectedDate
         self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CategoryReuseIdentifier, forIndexPath: indexPath) as! TimeLogTableViewCellController
-        cell.TitleLabel.text! = AL.categories[indexPath.row]
-        cell.HoursLabel.text! = String(AL.activityStack[cell.TitleLabel.text!]!.dailyTime)
+        AL.selectedDate = daylabel.title!
+        cell.TitleLabel.text! = AL.dayCats(AL.selectedDate)[indexPath.row]
+        cell.HoursLabel.text! = String(AL.dayVals(AL.selectedDate)[indexPath.row])
+        
         return cell
     }
+    
+    
+    
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

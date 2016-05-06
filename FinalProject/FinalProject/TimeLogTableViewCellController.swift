@@ -13,20 +13,26 @@ class TimeLogTableViewCellController: UITableViewCell {
     
     var AL = ActivityLog.sharedLog
     
+    
     @IBAction func plusButton(sender: UIButton) {
-        var hoursVal = Double(HoursLabel.text!)!
-        hoursVal = hoursVal + 1
-        HoursLabel.text! = hoursVal.description
-        AL.updateTempStack(TitleLabel.text!, newHours: Double(hoursVal), clear: false)
-        
+        HoursLabel.text! = String(Double(HoursLabel.text!)! + 1.0);
+        for item in AL.activityStack {
+            if item.date == AL.selectedDate {
+                item.setActivityTime(TitleLabel.text!, newTime: Double(HoursLabel.text!)!)
+            }
+        }
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
+    
     @IBAction func minusButton(sender: UIButton) {
-        print(HoursLabel.text!)
-        var hoursVal = Double(HoursLabel.text!)!
-        if hoursVal > 0 {
-            hoursVal = hoursVal - 1
-            HoursLabel.text! = hoursVal.description
-            AL.updateTempStack(TitleLabel.text!, newHours: Double(hoursVal), clear: false)
+        if HoursLabel.text! != "0.0" {
+            HoursLabel.text! = String(Double(HoursLabel.text!)! - 1.0);
+            for item in AL.activityStack {
+                if item.date == AL.selectedDate {
+                    item.setActivityTime(TitleLabel.text!, newTime: Double(HoursLabel.text!)!)
+                }
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
         }
     }
     

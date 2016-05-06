@@ -8,40 +8,34 @@
 
 import UIKit
 
-class newCategoryFormController: UIViewController {
-    
-    var ST = TimeLogTableViewController.sharedTable
+//class newCategoryFormController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate {
+class newCategoryFormController: UIViewController{
     var AL = ActivityLog.sharedLog
     
     @IBOutlet weak var popOverNewCategoryLabel: UITextField!
 
-    @IBAction func closeNewCategoryFormButton(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    @IBAction func AddCategoryButton() {
-        if popOverNewCategoryLabel.text! != "" && popOverNewCategoryLabel.text != nil {
-            let newActivity = Activity(categoryName: popOverNewCategoryLabel.text!, dailyTime: 0, totalTime: 0)
-            AL.activityStack[popOverNewCategoryLabel.text!] = newActivity!
+    @IBAction func newCategorySubmit(sender: UIButton) {
+        print("DATE:",AL.selectedDate)
+        for item in AL.activityStack {
+            print(item.date, item.ActivityAndTime)
+            if item.date == AL.selectedDate {
+                print(AL.selectedDate,item.ActivityAndTime)
+            }
+        }
+        if (popOverNewCategoryLabel.text! != "" && popOverNewCategoryLabel.text! != "") {
+            AL.newCategory(popOverNewCategoryLabel.text!, forDate: AL.selectedDate)
             
-            //Refresh the table
             NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
             
-            print(AL.activityStack)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
+    @IBAction func closeNewCategoryFormButton(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBOutlet weak var newCatForm: UIView!
     
-    override var preferredContentSize: CGSize {
-        get {
-            if newCatForm != nil && presentingViewController != nil {
-                return newCatForm.sizeThatFits(presentingViewController!.view.bounds.size)
-            } else {
-                return super.preferredContentSize
-            }
-        }
-        set { super.preferredContentSize = newValue }
-    }
+    
 }
