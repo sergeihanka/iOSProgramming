@@ -15,16 +15,22 @@ class ActivityLog {
     var activityStack = [Day]()
 
     var selectedDate = String()
+    var selectedChart = Int()
     
     init() { //load Saved Data
+        print("Stack empty, loading template.",activityStack)
         let formatter: NSDateFormatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
         let day = formatter.stringFromDate(NSDate())
         selectedDate = day
-        let newAct = ["School":0.0]
-        print(activityStack)
-        activityStack.append(Day(date: day, ActivityAndTime: newAct)!)
+        
         activityStack = loadSavedData()!
+        
+        if (activityStack == []) {
+            let newAct = ["School":0.0]
+            activityStack.append(Day(date: day, ActivityAndTime: newAct)!)
+            saveActivityLog()
+        }
     }
     
     // MARK: functions
@@ -38,8 +44,8 @@ class ActivityLog {
             }
         }
         if !foundInStack {
-            print(forDate, name)
-            activityStack.append(Day(date: forDate, ActivityAndTime: [name:0.0])!)
+            print("New Item:",forDate, name)
+            activityStack.append(Day(date: forDate, ActivityAndTime: [name: 0.0])!)
         }
     }
     
@@ -69,6 +75,7 @@ class ActivityLog {
     
     func dayVals(date: String) -> [Double] {
         var tmpVals = [Double]()
+        print("ACTIVITYSTACK:",activityStack)
         for obj in activityStack {
             if obj.date == date {
                 for item in obj.ActivityAndTime {
@@ -97,23 +104,26 @@ class ActivityLog {
             return tmpList
         }
     }
-    
-    var allActivitiesCategoriesAndTotalTime: [String:Double] {
+
+    var getPastWeek: [String] {
         get {
-            var x = [String:Double]()
-            for obj in activityStack {
-                for item in obj.ActivityAndTime {
-                    if x[item.0] != nil {
-                        x[item.0] = x[item.0]! + item.1
-                    } else {
-                        x[item.0] = 0
-                    }
-                }
+            let timeLength = 7
+            let calendar = NSCalendar.currentCalendar()
+            var tmpList = [String]()
+            var i = 0
+            while i > (0 - timeLength) {
+                let yesterday = calendar.dateByAddingUnit(.Day, value: i, toDate: NSDate(), options: [])
+                let formatter: NSDateFormatter = NSDateFormatter()
+                formatter.dateStyle = NSDateFormatterStyle.LongStyle
+                
+                let day = formatter.stringFromDate(yesterday!)
+                i = i - 1
+                tmpList.append(day)
             }
-            return x
+            return tmpList
         }
     }
-
+    
     var allActivitiesTotalTime: Double {
         get {
             let allCats = allActivitiesCategoriesAndTotalTime
@@ -132,56 +142,90 @@ class ActivityLog {
     
     // MARK: Get Stats
     
-    func getTotalAverageBreakDown() -> [String:Double]{
-        var stats = [String:Double]()
-        let allCategoriesTotal = allActivitiesCategoriesAndTotalTime
-        let tTime = allActivitiesTotalTime
-        for category in allCategoriesTotal.keys {
-            if tTime > 0.0 {
-                stats[category] = (Double((allCategoriesTotal[category])! / tTime))
-            } else {
-                stats[category] = 0.1
+    var allActivitiesCategoriesAndTotalTime: [String:Double] {
+        get {
+            var tmpDict = [String:Double]()
+            for day in activityStack {
+                for activity in day.ActivityAndTime {
+                    if let x = tmpDict[activity.0] {
+                        print(activity.0, "HERE",x)
+                        tmpDict[activity.0] = x + activity.1
+                    } else {
+                        if activity.1 == 0.0 {
+                            tmpDict[activity.0] = 0.0
+                        } else {
+                            tmpDict[activity.0] = activity.1
+                        }
+                    }
+                }
             }
+            print("Overall Breakdown:",tmpDict)
+            return tmpDict
         }
-        
-        print(tTime)
-        print("STATS: ",stats)
-        print("CATEGORIES: ",allCategoriesTotal)
-        return stats
     }
     
-//    func getWeeklyAverageBreakDown() -> [String:Double]{
+//    func getTotalAverageBreakDown() -> [String:Double]{
 //        var stats = [String:Double]()
-//        
-//        for date in getLastWeek {
-//            if let keyExists = activityStack. [date] != nil {
-//                
+//        let allCategoriesTotal = allActivitiesCategoriesAndTotalTime
+//        let tTime = allActivitiesTotalTime
+//        for category in allCategoriesTotal.keys {
+//            if tTime > 0.0 {
+//                stats[category] = (Double((allCategoriesTotal[category])! / tTime))
+//            } else {
+//                stats[category] = 0.1
 //            }
 //        }
-//        
-//        print(tTime)
-//        print("STATS: ",stats)
-//        print("CATEGORIES: ",categories)
 //        return stats
 //    }
     
-//    func getDailyAverageBreakDown() -> [String:Double]{
-//        var stats = [String:Double]()
-//        let tTime = allActivitiesTotalTime
-//        for key in categories {
-//            if tTime > 0.0 {
-//                print(Double((activityStack[key]?.totalTime)!) / tTime)
-//                stats[key] = (Double((activityStack[key]?.totalTime)!) / tTime)
-//            } else {
-//                stats[key] = 0.1
-//            }
-//        }
-//        
-//        print(tTime)
-//        print("STATS: ",stats)
-//        print("CATEGORIES: ",categories)
-//        return stats
-//    }
+    var getWeeklyAverageBreakDown: [String:Double] {
+        get {
+            let lastWeek = getPastWeek
+            var tmpDict = [String:Double]()
+            for day in activityStack {
+                if let _ = lastWeek.indexOf(day.date) {
+                    for activity in day.ActivityAndTime {
+                        if let x = tmpDict[activity.0] {
+                            print(activity.0, "HERE",x)
+                            tmpDict[activity.0] = x + activity.1
+                        } else {
+                            if activity.1 == 0.0 {
+                                tmpDict[activity.0] = 0.0
+                            } else {
+                                tmpDict[activity.0] = activity.1
+                            }
+                        }
+                    }
+                }
+            }
+            print("Weekly Breakdown:",tmpDict)
+            return tmpDict
+        }
+    }
+    
+    var getDailyAverageBreakDown: [String:Double] {
+        get {
+            var tmpDict = [String:Double]()
+            for day in activityStack {
+                if day.date == selectedDate {
+                    for activity in day.ActivityAndTime {
+                        if let x = tmpDict[activity.0] {
+                            print(activity.0, "HERE",x)
+                            tmpDict[activity.0] = x + activity.1
+                        } else {
+                            if activity.1 == 0.0 {
+                                tmpDict[activity.0] = 0.0
+                            } else {
+                                tmpDict[activity.0] = activity.1
+                            }
+                        }
+                    }
+                }
+            }
+            print("Daily Breakdown:",tmpDict)
+            return tmpDict
+        }
+    }
  
     // MARK: Persistent Data
     
@@ -207,5 +251,14 @@ class ActivityLog {
     }
     func CLEARALL() {
         activityStack = [Day]()
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        let day = formatter.stringFromDate(NSDate())
+        selectedDate = day
+        let newAct = ["School":0.0]
+        print(activityStack)
+        activityStack.append(Day(date: day, ActivityAndTime: newAct)!)
+        saveActivityLog()
+
     }
 }

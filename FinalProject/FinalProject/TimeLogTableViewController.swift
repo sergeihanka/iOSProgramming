@@ -8,20 +8,16 @@
 
 import UIKit
 
-class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
+class TimeLogTableViewController: UITableViewController, UITextFieldDelegate{
 //
     var AL = ActivityLog.sharedLog
     
-    @IBOutlet weak var daylabel: UIBarButtonItem!
+//    @IBOutlet weak var daylabel: UIBarButtonItem!
     
     //MARK: Storyboard Buttons
     
-    @IBAction func SubmitButton() {
-        AL.saveActivityLog()
-    }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AL.itemCount(daylabel.title!)
+        return AL.itemCount(AL.selectedDate)
     }
     
     private struct Storyboard {
@@ -34,7 +30,7 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
         //Load date into header
         let formatter: NSDateFormatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
-        daylabel.title! = AL.selectedDate
+//        daylabel.title! = AL.selectedDate
         
         self.title = "Time Log"
         super.viewDidLoad()
@@ -43,21 +39,38 @@ class TimeLogTableViewController: UITableViewController, UITextFieldDelegate {
     
     func loadList(notification: NSNotification){
         //load data here
-        daylabel.title! = AL.selectedDate
+//        daylabel.title! = AL.selectedDate
         self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CategoryReuseIdentifier, forIndexPath: indexPath) as! TimeLogTableViewCellController
-        AL.selectedDate = daylabel.title!
+//        AL.selectedDate = dayPicker.description
         cell.TitleLabel.text! = AL.dayCats(AL.selectedDate)[indexPath.row]
         cell.HoursLabel.text! = String(AL.dayVals(AL.selectedDate)[indexPath.row])
         
         return cell
     }
     
+    @IBOutlet weak var dayPicker: UIPickerView!
     
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        print("ROW:",row)
+        return NSAttributedString(string: AL.getPastData[row], attributes: [NSForegroundColorAttributeName : UIColor.orangeColor()])
+    }
     
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return AL.getPastData.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        AL.selectedDate = AL.getPastData[row]
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+    }
     
 }
 

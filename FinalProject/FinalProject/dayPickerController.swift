@@ -21,6 +21,7 @@ class dayPickerController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return AL.getPastData.count
     }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -28,7 +29,7 @@ class dayPickerController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         AL.selectedDate = AL.getPastData[row]
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-        print("picker:",AL.selectedDate)
+//        print("picker:",AL.selectedDate)
     }
     
     override func viewDidLoad() {

@@ -1,34 +1,23 @@
 //
-//  GraphViewController.swift
+//  GraphViews.swift
 //  FinalProject
 //
-//  Created by Sergei Hanka on 4/27/16.
+//  Created by Sergei Hanka on 5/8/16.
 //  Copyright © 2016 Sergei Hanka. All rights reserved.
 //
 
 import UIKit
 import PNChartSwift
 
-class HomeViewController: UIViewController {
-    
+class WeekChart: UIViewController {
     @IBOutlet weak var barChart: PNBarChart!
     
-    @IBOutlet weak var ChartLabel: UILabel!
+//    @IBOutlet weak var ChartLabel: UILabel!
     
     var AL = ActivityLog.sharedLog
     
     override func viewDidLoad() {
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-        
-        navigationController!.navigationBar.barTintColor = UIColor.blackColor()
-        
-        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
-        
-        self.title = "Productivity!"
-
         createBarChart()
-        
     }
     
     func createBarChart() {
@@ -39,11 +28,11 @@ class HomeViewController: UIViewController {
         
         print("BARCHART WIDTH",barChart.frame.size.width)
         
-        ChartLabel.textColor = PNGreenColor
-        
-        ChartLabel.font = UIFont(name: "Avenir-Medium", size:23.0)
-        
-        ChartLabel.text = "Productivity Overview"
+//        ChartLabel.textColor = PNGreenColor
+//        
+//        ChartLabel.font = UIFont(name: "Avenir-Medium", size:23.0)
+//        
+//        ChartLabel.text = "Productivity Overview"
         
         barChart.backgroundColor = UIColor.clearColor()
         
@@ -51,8 +40,9 @@ class HomeViewController: UIViewController {
         
         barChart.animationType = .Waterfall
         
-        print("Main Chart Values")
+        print("Week Chart Values")
         print(Array(AL.allActivitiesCategoriesAndTotalTime.keys))
+        print(barChart.yValues)
         
         barChart.xLabels = Array(AL.allActivitiesCategoriesAndTotalTime.keys)
         
@@ -66,8 +56,6 @@ class HomeViewController: UIViewController {
             }
         }
         
-        print(barValues)
-        
         barChart.yValues = barValues
         
         barChart.strokeChart()
@@ -76,17 +64,4 @@ class HomeViewController: UIViewController {
     func userClickedOnBarChartIndex(barIndex: Int) {
         print("Click  on bar \(barIndex)")
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func clear(sender: AnyObject) {
-        AL.CLEARALL()
-    }
-    
 }
-
-
-//end
